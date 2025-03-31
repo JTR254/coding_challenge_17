@@ -74,3 +74,8 @@ const patrick = new VIPCustomer("Patrick Star", "patrickstar@gmail.com", "Gold")
 patrick.addPurchase(100);
 patrick.addPurchase(50);
 patrick.getTotalSpent(); 
+
+// Task 4 - Client Report System
+
+console.log ("Client Report System")
+
