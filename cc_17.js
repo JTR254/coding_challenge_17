@@ -50,3 +50,27 @@ rep.addClient(jamie)
 
 console.log(rep.getClientTotal("Tyler Adams"));
 console.log(rep.getClientTotal("Alice Wonderland"));
+
+// Task 3 - Creates VIP Customer Class
+
+class VIPCustomer extends Customer { // creates a class that extends to customer
+    constructor (name, email, vipLevel) {
+        super(name, email);
+        this.vipLevel = vipLevel;
+        console.log(`VIP Customer created: ${this.name} - Level: ${this.vipLevel}`);
+    }
+
+    getTotalSpent() { // method that gets the total amount spent
+        const baseTotal = super.getTotalSpent(); // get original total from Customer
+        const bonus = baseTotal * 0.10; // calculates the 10% bonus
+        const totalWithBonus = baseTotal + bonus;
+
+        console.log(`${this.name}'s Total Spent with 10% VIP Bonus: $${totalWithBonus.toFixed(2)}`); // logs the total spent with the bonus
+    return totalWithBonus;
+    }
+};
+
+const patrick = new VIPCustomer("Patrick Star", "patrickstar@gmail.com", "Gold"); // adds a new VIP customer
+patrick.addPurchase(100);
+patrick.addPurchase(50);
+patrick.getTotalSpent(); 
